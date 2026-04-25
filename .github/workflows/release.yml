@@ -29,15 +29,15 @@ jobs:
       
       - name: Rename executable
         run: |
+          $repoName = "${{ github.event.repository.name }}"
           $version = "${{ steps.version.outputs.tag }}"
-          $sourceFile = "Release\$repoName.exe"
+          $sourceFile = "$repoName\x64\Release\$repoName.exe"
           $targetFile = "$repoName-$version.exe"
           Move-Item -Path $sourceFile -Destination $targetFile
       
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: |
-            ${{ github.event.repository.name }}-${{ steps.version.outputs.tag }}.exe
+          files: ${{ github.event.repository.name }}-${{ steps.version.outputs.tag }}.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
