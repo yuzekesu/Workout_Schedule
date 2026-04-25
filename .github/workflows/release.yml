@@ -30,7 +30,7 @@ jobs:
       - name: Rename executable
         run: |
           $version = "${{ steps.version.outputs.tag }}"
-          $sourceFile = "path/to/Release/$repoName.exe"
+          $sourceFile = "Workout_Schedule\Release\$repoName.exe"
           $targetFile = "$repoName-$version.exe"
           Move-Item -Path $sourceFile -Destination $targetFile
       
