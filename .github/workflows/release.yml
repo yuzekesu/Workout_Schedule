@@ -18,7 +18,8 @@ jobs:
       
       - name: Build project
         run: |
-          msbuild YourProject.sln /p:Configuration=Release /p:Platform=x64
+          $repoName = "${{ github.event.repository.name }}"
+          msbuild $repoName.sln /p:Configuration=Release /p:Platform=x64
       
       - name: Extract version from tag
         id: version
@@ -28,9 +29,8 @@ jobs:
       
       - name: Rename executable
         run: |
-          $repoName = "${{ github.event.repository.name }}"
           $version = "${{ steps.version.outputs.tag }}"
-          $sourceFile = "path/to/Release/YourApp.exe"
+          $sourceFile = "path/to/Release/$repoName.exe"
           $targetFile = "$repoName-$version.exe"
           Move-Item -Path $sourceFile -Destination $targetFile
       
