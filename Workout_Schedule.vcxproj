@@ -136,7 +136,7 @@
     <ClInclude Include="code\Schedule.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".github\workflow\release.yml" />
+    <None Include=".github\workflows\release.yml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
