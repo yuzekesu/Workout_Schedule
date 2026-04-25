@@ -16,10 +16,6 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
 
-      - name: Install v145 build tools
-        run: |
-          choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools"
-      
       - name: Build project
         run: |
           $repoName = "${{ github.event.repository.name }}"
