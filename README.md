@@ -3,7 +3,7 @@ This is a console app that helps you to memory and sort the workout exercises. E
 # Caution
 * The amount of the rows that displaying is hard-coded to 5 rows.
 * Thus to be able to see the remaining unseen exercises, you need to first pick the showing exercises as today's training plan, so other exercises sorts up.
-* The schedule updates and sorts once each day according to the parameter "last day".
+* The schedule updates and sorts once each day according to the parameter "Last time".
 * So please aim for picking different exercises each day/week.
 # How to use (windows only)
 * run the .exe to generate empty schedule.txt
